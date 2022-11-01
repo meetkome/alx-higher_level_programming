@@ -124,6 +124,7 @@ class Rectangle(Base):
                 elif a == 4:
                     self.y = arg
                 a += 1
+
         elif kwargs and len(kwargs) != 0:
             for k, v in kwargs.items():
                 if k == "id":
@@ -154,4 +155,4 @@ class Rectangle(Base):
         """Return the print() and str() representation of the Rectangle."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,
-                                                       self.width, self.height
+                                                       self.width, self.height)
