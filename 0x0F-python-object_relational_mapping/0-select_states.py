@@ -12,12 +12,14 @@ if __name__ == "__main__":
         user=sys.argv[1],
         passwd=sys.argv[2],
         db=sys.argv[3],
-        port=3306)
+        port=3306,
+        charset='utf8'
+        )
     cur = db.cursor()
-    cur.execute("SELECT * FROM states")
+    cur.execute("SELECT * FROM states ORDER BY id")
     rows = cur.fetchall()
 
-    for row in rows:
-        print(row)
+    for r in rows:
+        print("({}, '{}')".format(r[0], r[1]))
     cur.close()
     db.close()
